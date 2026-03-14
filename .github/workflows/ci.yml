@@ -9,6 +9,10 @@ on:
 jobs:
   testes:
     runs-on: ubuntu-latest
+    
+    env:
+      ENVIRONMENT: dev
+      BASE_URL: https://example.cypress.io
 
     steps:
       - name: Baixar o código do repositório
