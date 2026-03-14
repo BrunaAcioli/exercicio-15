@@ -8,14 +8,15 @@ on:
 
 jobs:
   testes:
+    name: Executar testes automatizados
     runs-on: ubuntu-latest
-    
+
     env:
       ENVIRONMENT: dev
       BASE_URL: https://example.cypress.io
 
     steps:
-      - name: Baixar o código do repositório
+      - name: Baixar código do repositório
         uses: actions/checkout@v4
 
       - name: Configurar Node.js
@@ -32,7 +33,7 @@ jobs:
       - name: Gerar relatório Allure
         run: npm run allure:generate
 
-      - name: Upload do relatório Allure
+      - name: Publicar artefato do relatório
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
